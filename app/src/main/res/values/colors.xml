@@ -3,4 +3,7 @@
     <color name="colorPrimary">#ED1C28</color>
     <color name="colorPrimaryDark">#B71C1C</color>
     <color name="colorAccent">#34495e</color>
+
+    <color name="text_primary">#FFFFFF</color>
+    <color name="bkg_card">#8C9EFF</color>
 </resources>
