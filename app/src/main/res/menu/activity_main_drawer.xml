@@ -15,19 +15,19 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Meu Time" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_avalie"
             android:icon="@drawable/ic_menu_manage"
             android:title="Avalie-nos" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_ligas"
             android:icon="@drawable/ic_menu_manage"
             android:title="Ligas" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_noticias"
             android:icon="@drawable/ic_menu_manage"
             android:title="Noticias" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_timecoracao"
             android:icon="@drawable/ic_menu_manage"
             android:title="Time do coração" />
         <item

@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="0dp"
-    android:paddingLeft="0dp"
-    android:paddingRight="0dp"
-    android:paddingTop="0dp"
+    android:paddingBottom="@dimen/pontuacao_vertical_margin"
+    android:paddingLeft="@dimen/pontuacao_horizontal_margin"
+    android:paddingRight="@dimen/pontuacao_horizontal_margin"
+    android:paddingTop="@dimen/pontuacao_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="br.com.devgeek.cartolapro.MainActivity"
     tools:showIn="@layout/app_bar_main"
-    android:padding="0dp">
+    android:background="@color/bg_background">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/cardList"

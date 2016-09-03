@@ -5,65 +5,72 @@
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="3dp">
+    android:layout_marginBottom="8dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/card_background"
+        android:padding="4dp">
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:background="@color/bkg_card"
-            android:text="contact det"
-            android:gravity="center_vertical"
-            android:textColor="@android:color/white"
-            android:textSize="14dp"/>
-
-        <TextView
-            android:id="@+id/txtName"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
-            android:gravity="center_vertical"
-            android:textSize="10dp"
-            android:layout_below="@id/title"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"/>
+            android:src="@drawable/escudo"
+
+            android:maxHeight="48dp"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:foregroundGravity="center_vertical|center_horizontal"
+            android:maxWidth="48dp" />
 
         <TextView
-            android:id="@+id/txtSurname"
+            android:id="@+id/txtTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Surname"
+            android:text="Auto Pecas Santos EC"
             android:gravity="center_vertical"
-            android:textSize="10dp"
-            android:layout_below="@id/txtName"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"
-            />
+            android:textSize="20sp"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_toRightOf="@+id/imageView"
+            android:layout_toEndOf="@+id/imageView"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="2dp" />
 
         <TextView
-            android:id="@+id/txtEmail"
+            android:id="@+id/txtCartoleiro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email"
-            android:textSize="10dp"
-            android:layout_marginTop="10dp"
+            android:text="Paulo Henrique Santos"
+            android:gravity="center_vertical"
+            android:textSize="12dp"
+            android:layout_below="@+id/txtTime"
+            android:layout_alignLeft="@+id/txtTime"
+            android:layout_alignStart="@+id/txtTime" />
+
+        <TextView
+            android:id="@+id/txtVariacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C$ 0.00"
+            android:gravity="center_vertical"
+            android:textSize="12dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/txtPontuacao"
+            android:layout_toStartOf="@+id/txtPontuacao"
+            android:layout_marginRight="16dp" />
+
+        <TextView
+            android:id="@+id/txtPontuacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="000.00"
+            android:gravity="center_vertical"
+            android:textSize="28dp"
+            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="150dp"
-            android:layout_alignBaseline="@id/txtName"/>
-
-        <TextView
-            android:id="@+id/txtAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Address"
-            android:textSize="10dp"
-            android:layout_alignLeft="@id/txtEmail"
-            android:layout_alignStart="@id/txtEmail"
-            android:layout_alignBaseline="@id/txtSurname"/>
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 

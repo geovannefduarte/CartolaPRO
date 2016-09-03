@@ -26,13 +26,15 @@ public class PontuacaoAdapter extends RecyclerView.Adapter<PontuacaoAdapter.Pont
             }
 
     @Override
-    public void onBindViewHolder(PontuacaoViewHolder contactViewHolder, int i) {
-            Pontuacao ci = pontuacaoList.get(i);
-            contactViewHolder.vName.setText(ci.name);
-            contactViewHolder.vSurname.setText(ci.surname);
-            contactViewHolder.vEmail.setText(ci.email);
-            contactViewHolder.vTitle.setText(ci.name + " " + ci.surname);
-            }
+    public void onBindViewHolder(PontuacaoViewHolder contactViewHolder, int i){
+
+        Pontuacao pontuacao = pontuacaoList.get(i);
+
+        contactViewHolder.viewTime.setText(pontuacao.time);
+        contactViewHolder.viewCartoleiro.setText(pontuacao.cartoleiro);
+        contactViewHolder.viewVariacao.setText(String.format("C$ %.2f",pontuacao.variacao));
+        contactViewHolder.viewPontuacao.setText(String.format("%.2f",pontuacao.pontuacao));
+    }
 
     @Override
     public PontuacaoViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
@@ -45,17 +47,17 @@ public class PontuacaoAdapter extends RecyclerView.Adapter<PontuacaoAdapter.Pont
 
     public static class PontuacaoViewHolder extends RecyclerView.ViewHolder {
 
-        protected TextView vName;
-        protected TextView vSurname;
-        protected TextView vEmail;
-        protected TextView vTitle;
+        protected TextView viewTime;
+        protected TextView viewCartoleiro;
+        protected TextView viewVariacao;
+        protected TextView viewPontuacao;
 
         public PontuacaoViewHolder(View v) {
             super(v);
-            vName =  (TextView) v.findViewById(R.id.txtName);
-            vSurname = (TextView)  v.findViewById(R.id.txtSurname);
-            vEmail = (TextView)  v.findViewById(R.id.txtEmail);
-            vTitle = (TextView) v.findViewById(R.id.title);
+            viewTime = (TextView) v.findViewById(R.id.txtTime);
+            viewCartoleiro = (TextView) v.findViewById(R.id.txtCartoleiro);
+            viewVariacao = (TextView) v.findViewById(R.id.txtVariacao);
+            viewPontuacao = (TextView) v.findViewById(R.id.txtPontuacao);
         }
     }
 }

@@ -46,6 +46,11 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
+
+
+
+
         // Card list
         RecyclerView recList = (RecyclerView) findViewById(R.id.cardList);
         recList.setHasFixedSize(true);
@@ -118,13 +123,17 @@ public class MainActivity extends AppCompatActivity
     private List<Pontuacao> createList(int size) {
 
         List<Pontuacao> result = new ArrayList<Pontuacao>();
-        for (int i=1; i <= size; i++) {
-            Pontuacao ci = new Pontuacao();
-            ci.name = Pontuacao.NAME_PREFIX + i;
-            ci.surname = Pontuacao.SURNAME_PREFIX + i;
-            ci.email = Pontuacao.EMAIL_PREFIX + i + "@test.com";
 
-            result.add(ci);
+        for (int i=0; i < size; i++){
+
+            Pontuacao pontuacao = new Pontuacao();
+
+            pontuacao.time = "Auto Peças Santos EC";
+            pontuacao.cartoleiro = "Paulo Henrique Santos";
+            pontuacao.pontuacao = 0.0;
+            pontuacao.variacao = 0.0;
+
+            result.add(pontuacao);
 
         }
 
