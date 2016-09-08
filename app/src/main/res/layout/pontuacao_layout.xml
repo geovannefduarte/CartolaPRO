@@ -31,12 +31,12 @@
             android:layout_height="wrap_content"
             android:text="Auto Pecas Santos EC"
             android:gravity="center_vertical"
-            android:textSize="20sp"
+            android:textSize="@dimen/_16sdp"
             android:layout_alignTop="@+id/imageView"
             android:layout_toRightOf="@+id/imageView"
             android:layout_toEndOf="@+id/imageView"
             android:layout_marginLeft="4dp"
-            android:layout_marginTop="2dp" />
+            android:layout_marginTop="@dimen/_1sdp" />
 
         <TextView
             android:id="@+id/txtCartoleiro"
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:text="Paulo Henrique Santos"
             android:gravity="center_vertical"
-            android:textSize="12dp"
+            android:textSize="@dimen/_10sdp"
             android:layout_below="@+id/txtTime"
             android:layout_alignLeft="@+id/txtTime"
             android:layout_alignStart="@+id/txtTime" />
@@ -55,11 +55,11 @@
             android:layout_height="wrap_content"
             android:text="C$ 0.00"
             android:gravity="center_vertical"
-            android:textSize="12dp"
+            android:textSize="@dimen/_10sdp"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/txtPontuacao"
             android:layout_toStartOf="@+id/txtPontuacao"
-            android:layout_marginRight="16dp" />
+            android:layout_marginRight="@dimen/_6sdp" />
 
         <TextView
             android:id="@+id/txtPontuacao"
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:text="000.00"
             android:gravity="center_vertical"
-            android:textSize="28dp"
+            android:textSize="@dimen/_22sdp"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
