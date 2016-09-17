@@ -1,6 +1,7 @@
 package br.com.devgeek.cartolapro;
 
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
@@ -18,13 +19,23 @@ import android.view.MenuItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+import br.com.devgeek.cartolapro.service.ParciaisService;
+import br.com.devgeek.cartolapro.service.impl.ParciaisServiceImpl;
+
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    RecyclerView recList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (android.os.Build.VERSION.SDK_INT > 9) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -34,6 +45,9 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
+                PontuacaoAdapter ca = new PontuacaoAdapter(createList(true));
+                recList.setAdapter(ca);
             }
         });
 
@@ -52,14 +66,14 @@ public class MainActivity extends AppCompatActivity
 
 
         // Card list
-        RecyclerView recList = (RecyclerView) findViewById(R.id.cardList);
+        recList = (RecyclerView) findViewById(R.id.cardList);
         recList.setHasFixedSize(true);
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recList.setLayoutManager(llm);
 
-        PontuacaoAdapter ca = new PontuacaoAdapter(createList(30));
+        PontuacaoAdapter ca = new PontuacaoAdapter(createList(false));
         recList.setAdapter(ca);
     }
 
@@ -120,23 +134,9 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private List<Pontuacao> createList(int size) {
+    private List<Pontuacao> createList(boolean reload){
 
-        List<Pontuacao> result = new ArrayList<Pontuacao>();
-
-        for (int i=0; i < size; i++){
-
-            Pontuacao pontuacao = new Pontuacao();
-
-            pontuacao.time = "Auto Peças Santos EC";
-            pontuacao.cartoleiro = "Paulo Henrique Santos";
-            pontuacao.pontuacao = 0.0;
-            pontuacao.variacao = 0.0;
-
-            result.add(pontuacao);
-
-        }
-
-        return result;
+        ParciaisService parciaisService = new ParciaisServiceImpl();
+        return parciaisService.buscarPariais(reload);
     }
 }

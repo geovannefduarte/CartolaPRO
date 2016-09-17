@@ -14,7 +14,7 @@
         android:padding="4dp">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imgEscudo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/escudo"
@@ -32,9 +32,9 @@
             android:text="Auto Pecas Santos EC"
             android:gravity="center_vertical"
             android:textSize="@dimen/_16sdp"
-            android:layout_alignTop="@+id/imageView"
-            android:layout_toRightOf="@+id/imageView"
-            android:layout_toEndOf="@+id/imageView"
+            android:layout_alignTop="@+id/imgEscudo"
+            android:layout_toRightOf="@+id/imgEscudo"
+            android:layout_toEndOf="@+id/imgEscudo"
             android:layout_marginLeft="4dp"
             android:layout_marginTop="@dimen/_1sdp" />
 

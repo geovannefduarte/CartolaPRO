@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -30,10 +31,20 @@ public class PontuacaoAdapter extends RecyclerView.Adapter<PontuacaoAdapter.Pont
 
         Pontuacao pontuacao = pontuacaoList.get(i);
 
-        contactViewHolder.viewTime.setText(pontuacao.time);
-        contactViewHolder.viewCartoleiro.setText(pontuacao.cartoleiro);
-        contactViewHolder.viewVariacao.setText(String.format("C$ %.2f",pontuacao.variacao));
-        contactViewHolder.viewPontuacao.setText(String.format("%.2f",pontuacao.pontuacao));
+        if (pontuacao.getTime().equals("Arkenstone FC")){
+            contactViewHolder.viewEscudo.setImageResource(R.drawable.escudo_geo);
+        } else if (pontuacao.getTime().equals("DJ Soccer Club")){
+            contactViewHolder.viewEscudo.setImageResource(R.drawable.escudo_dj);
+        } else if (pontuacao.getTime().equals("CaiapôniaDuarte FC")){
+            contactViewHolder.viewEscudo.setImageResource(R.drawable.escudo_cpa);
+        } else {
+            contactViewHolder.viewEscudo.setImageResource(R.drawable.escudo);
+        }
+
+        contactViewHolder.viewTime.setText(pontuacao.getTime());
+        contactViewHolder.viewCartoleiro.setText(pontuacao.getCartoleiro());
+        contactViewHolder.viewVariacao.setText(String.format("C$ %.2f",pontuacao.getVariacao()));
+        contactViewHolder.viewPontuacao.setText(String.format("%.2f",pontuacao.getPontuacao()));
     }
 
     @Override
@@ -47,6 +58,7 @@ public class PontuacaoAdapter extends RecyclerView.Adapter<PontuacaoAdapter.Pont
 
     public static class PontuacaoViewHolder extends RecyclerView.ViewHolder {
 
+        protected ImageView viewEscudo;
         protected TextView viewTime;
         protected TextView viewCartoleiro;
         protected TextView viewVariacao;
@@ -54,10 +66,11 @@ public class PontuacaoAdapter extends RecyclerView.Adapter<PontuacaoAdapter.Pont
 
         public PontuacaoViewHolder(View v) {
             super(v);
-            viewTime = (TextView) v.findViewById(R.id.txtTime);
-            viewCartoleiro = (TextView) v.findViewById(R.id.txtCartoleiro);
-            viewVariacao = (TextView) v.findViewById(R.id.txtVariacao);
-            viewPontuacao = (TextView) v.findViewById(R.id.txtPontuacao);
+            viewEscudo     = (ImageView) v.findViewById(R.id.imgEscudo);
+            viewTime       = (TextView)  v.findViewById(R.id.txtTime);
+            viewCartoleiro = (TextView)  v.findViewById(R.id.txtCartoleiro);
+            viewVariacao   = (TextView)  v.findViewById(R.id.txtVariacao);
+            viewPontuacao  = (TextView)  v.findViewById(R.id.txtPontuacao);
         }
     }
 }
